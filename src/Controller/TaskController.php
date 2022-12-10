@@ -44,6 +44,7 @@ class TaskController extends AbstractController
         ->to('you@example.com')
         ->subject(sprintf('%s%s', 'test', '_desu'))
         ->textTemplate('emails/taskMail.html.twig')
+        // このタイミングではシリアライズ化されない。
         ->context([
           'task' => $task,
         ]);
