@@ -37,3 +37,15 @@ form entity 使ってないからかふつうに普通に送信できちゃっ�
 次は無限の処理をマネてみよう。
 フォーム作って送信までやりたいな
 → https://symfony.com/doc/current/reference/forms/types/file.html
+
+メールテンプレの twig に画像ファイルを送ってるのが問題っぽい
+https://symfony.com/doc/current/mailer.html#text-content
+→templateEmail で twig にわたす context は serialize 可能である必要ありらしい。(非同期でメールを送信するときのみ)
+
+.env いじれば同期的にメールをおくれるのか?
+
+シリアライズと json の違い
+https://9-bb.com/serialize-json/
+シリアライズだとエンコードできない場合があるらしい、ただし速度は早い。
+
+## symfony 初心者が添付ファイル付きのメール送信で苦戦した話
